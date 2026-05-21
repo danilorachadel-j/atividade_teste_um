@@ -1,3 +1,25 @@
+<?php
+
+session_start();
+
+$host = "localhost";
+$user = "root";
+$pass = "root";
+$db = "sistema_simples";
+
+$conn = new mysqli($host,$user,$pass,$db);
+
+if ( $conn -> connect_error){
+
+    echo  "<script> console.log('erro na conexão com o banco')</script>";
+}else{
+        echo  "<script> console.log('conexão com o banco foi um sucesso')</script>";
+
+}
+
+?>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +33,7 @@
     <input type="text" name="usuario"> <br>
     <label>senha</label>
     <input type="password" name="senha"><br>
-    
+
     <button type="submit">Entrar</button>
     </form>
 </body>
